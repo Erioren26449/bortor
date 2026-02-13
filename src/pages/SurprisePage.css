@@ -1,0 +1,117 @@
+/* SurprisePage.css */
+
+.surprise-container {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, #fff0f3 0%, #ffdde1 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* ระยะห่างระหว่างรูปกับกล่องข้อความ */
+  width: 100%;
+  max-width: 380px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.main-wrapper.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Container รูปถ่าย --- */
+.photo-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Container รูปถ่าย (ปรับเป็นสี่เหลี่ยม) --- */
+.personal-photo {
+  width: 250px;      /* ปรับขนาดให้กว้างขึ้นเล็กน้อยเพราะเป็นสี่เหลี่ยม */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 25px; /* เปลี่ยนจาก 50% เป็น 25px เพื่อให้เป็นสี่เหลี่ยมมุมมน */
+  border: 8px solid #fff; /* ขอบหนาขึ้นนิดนึงให้ดูเหมือนกรอบรูป */
+  box-shadow: 0 12px 30px rgba(255, 77, 109, 0.25);
+  
+  /* เพิ่มอนิเมชั่นให้รูปเอียงนิดๆ เพิ่มความน่ารัก */
+  transform: rotate(-2deg); 
+  transition: transform 0.3s ease;
+}
+
+.personal-photo:hover {
+  transform: rotate(0deg) scale(1.05); /* เวลาเอาเมาส์วางแล้วรูปจะตรงและใหญ่ขึ้น */
+}
+
+/* ปรับ Media Query สำหรับมือถือด้วยครับ */
+@media (max-width: 400px) {
+  .personal-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+  }
+}
+/* --- Container รวมดอกไม้และข้อความ --- */
+.greeting-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 30px 20px;
+  border: 2px solid #fff;
+  box-shadow: 0 15px 35px rgba(255, 77, 109, 0.15);
+  text-align: center;
+}
+
+.flower-section {
+  margin-bottom: 15px;
+}
+
+.bouquet-emoji {
+  font-size: 5rem;
+  display: block;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.sparkle-layer {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.message-section h2 {
+  font-family: 'Itim', cursive;
+  color: #ff4d6d;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.message-section p {
+  font-family: 'Kanit', sans-serif;
+  color: #5c2d35;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+/* Animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Mobile responsive */
+@media (max-width: 400px) {
+  .personal-photo {
+    width: 180px;
+    height: 180px;
+  }
+  .greeting-card {
+    padding: 20px 15px;
+  }
+}
