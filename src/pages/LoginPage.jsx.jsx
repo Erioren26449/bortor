@@ -9,7 +9,7 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === '1234') { 
+    if (password === '250667') { 
       setIsOpening(true); // เริ่มเล่นอนิเมชั่นเปิดกล่อง
       
       // รอให้แอนิเมชั่นทำงาน 1 วินาทีแล้วค่อยเปลี่ยนหน้า
